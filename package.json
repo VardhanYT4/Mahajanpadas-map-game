@@ -1,1 +1,0 @@
-{"scripts":{"start":"npx serve -s . -l 8080"},"dependencies":{"serve":"^14.2.4"}}
