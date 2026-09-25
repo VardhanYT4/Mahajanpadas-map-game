@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#123b5d">
+  <title>Mahajanapada Map Quest</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="orb orb1"></div><div class="orb orb2"></div>
+  <div id="particles"></div>
+
+  <div class="app">
+    <header class="hero">
+      <div>
+        <div class="tiny">🏺 ANCIENT INDIA • MAP ADVENTURE</div>
+        <h1>Mahajanapada <span>Map Quest</span></h1>
+        <p>Learn the map → remember the locations → become a map master!</p>
+      </div>
+      <div class="score-pill">
+        <div><small>XP</small><b id="score">0</b></div>
+        <div><small>🔥 STREAK</small><b id="streak">0</b></div>
+      </div>
+    </header>
+
+    <nav class="journey">
+      <div class="journey-line"><i id="journeyFill"></i></div>
+      <button class="journey-step active" data-mode="learn"><span>1</span><small>Learn</small></button>
+      <button class="journey-step" data-mode="remember"><span>2</span><small>Remember</small></button>
+      <button class="journey-step" data-mode="practice"><span>3</span><small>Practice</small></button>
+    </nav>
+
+    <main>
+      <section id="learn" class="screen active">
+        <div class="section-title">
+          <div><div class="kicker">STEP 1</div><h2>🗺️ Explore the map</h2><p>Tap a glowing pin to learn its location.</p></div>
+          <button id="soundBtn" class="glass-btn">🔊 Sound</button>
+        </div>
+
+        <div class="map-shell">
+          <div class="map-top"><span>✨ Tap a glowing location</span><span>Ancient boundaries are approximate.</span></div>
+          <div class="photo-map" id="learnMap">
+            <img src="mahajanapada-map.jpg" alt="India outline map used for the learning game">
+            <div class="shine"></div>
+          </div>
+          <div id="learnInfo" class="learn-info">
+            <div class="big-icon">👆</div>
+            <h3>Choose a Mahajanapada</h3>
+            <p>Start with one of the glowing pins.</p>
+          </div>
+        </div>
+
+        <div class="tip">💡 <b>Memory trick:</b> Think of the Mahajanapadas as places on a journey across ancient India.</div>
+      </section>
+
+      <section id="remember" class="screen">
+        <div class="section-title">
+          <div><div class="kicker">STEP 2</div><h2>🧠 Memory Mission</h2><p>Read the clue, imagine the map, then reveal the location.</p></div>
+        </div>
+
+        <div class="memory-card">
+          <div class="card-glow"></div>
+          <div class="memory-number" id="memoryProgress">1 / 16</div>
+          <div class="memory-emoji" id="memoryEmoji">🧭</div>
+          <div class="memory-label">CAN YOU REMEMBER?</div>
+          <h2 id="memoryName">Kamboja</h2>
+          <p id="memoryClue">Far northwest — think beyond Gandhara.</p>
+          <button id="memoryReveal" class="main-btn">Reveal location ✨</button>
+          <button id="memoryNext" class="main-btn secondary hidden">Next mission →</button>
+        </div>
+      </section>
+
+      <section id="practice" class="screen">
+        <div class="section-title">
+          <div><div class="kicker">STEP 3</div><h2>🎯 Map Challenge</h2><p id="practicePrompt">Find the territory for Kamboja.</p></div>
+          <button id="hintBtn" class="glass-btn">💡 Hint</button>
+        </div>
+
+        <div class="challenge-stats">
+          <div><small>QUESTION</small><b id="questionNo">1 / 16</b></div>
+          <div><small>CORRECT</small><b id="correct">0</b></div>
+          <div><small>BEST STREAK</small><b id="bestStreak">0</b></div>
+        </div>
+
+        <div class="map-shell">
+          <div class="map-top"><span>🎯 Find the correct location</span><span id="progressText">0%</span></div>
+          <div class="progress-track"><i id="practiceProgress"></i></div>
+          <div class="photo-map" id="practiceMap">
+            <img src="mahajanapada-map.jpg" alt="Interactive India map">
+            <div class="shine"></div>
+          </div>
+          <div id="feedback" class="feedback">Tap a glowing location to answer.</div>
+        </div>
+
+        <button id="restartBtn" class="restart-btn">↻ Restart challenge</button>
+      </section>
+    </main>
+
+    <footer>Made for students • Educational historical reconstruction</footer>
+  </div>
+
+  <div id="toast" class="toast">Great job!</div>
+
+  <div id="finishModal" class="modal hidden">
+    <div class="modal-card">
+      <div class="trophy">🏆</div>
+      <div class="kicker">MISSION COMPLETE</div>
+      <h2>Map Master!</h2>
+      <p id="finalMessage"></p>
+      <div class="final-stats"><span>⭐ <b id="finalXP">0</b> XP</span><span>🔥 <b id="finalStreak">0</b> streak</span></div>
+      <button id="playAgain" class="main-btn">Play again 🚀</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
