@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Mahajanapada Map Quest</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+<header>
+  <div class="brand">🗺️ Mahajanapada Map Quest</div>
+  <div class="subtitle">Learn the map • Remember the regions • Practice like a pro</div>
+</header>
+<nav class="steps" aria-label="Game steps">
+  <button class="step active" data-step="0"><b>1</b><span>Learn</span></button>
+  <button class="step" data-step="1"><b>2</b><span>Remember</span></button>
+  <button class="step" data-step="2"><b>3</b><span>Practice</span></button>
+</nav>
+<main>
+<section id="learn" class="screen active">
+  <div class="title-row"><div><small>STEP 1</small><h1>✨ Explore the map</h1><p>Tap any glowing circle to learn about that Mahajanapada.</p></div><button id="soundBtn">🔊 Sound</button></div>
+  <div class="map-card">
+    <div class="map-head"><b>✨ Tap a colored region</b><span>Every circle is positioned inside its matching colored area.</span></div>
+    <div class="map-wrap"><img id="map" src="mahajanapada-map.jpg" alt="Map of the Indian subcontinent showing Mahajanapada regions"><div id="pins" class="pin-layer"></div></div>
+    <div id="learnCard" class="learn-card"><div class="big-emoji">🧠</div><h2>Start exploring!</h2><p>Tap a glowing circle. You’ll get the region, capital, modern area, government type and a memory clue.</p></div>
+  </div>
+  <div class="memory-tip">💡 <b>Memory trick:</b> Travel from the north-west → Ganga plain → east → south. The locations become a story instead of a list.</div>
+</section>
+<section id="remember" class="screen">
+  <div class="title-row"><div><small>STEP 2</small><h1>🧠 Remember</h1><p>Tap a card to jump back to its place on the map.</p></div></div>
+  <div id="memoryGrid" class="memory-grid"></div>
+  <button class="primary" id="toPractice">🎯 I’m ready to practise</button>
+</section>
+<section id="practice" class="screen">
+  <div class="title-row"><div><small>STEP 3</small><h1>🎯 Map Challenge</h1><p>Find the Mahajanapada named below.</p></div><div class="score">⭐ <span id="score">0</span> XP<br>🔥 <span id="streak">0</span> streak</div></div>
+  <div class="question"><div class="qemoji">🧭</div><div><b id="question">Loading…</b><small id="questionHint">Look carefully at the colored regions.</small></div></div>
+  <div class="map-card practice-card"><div class="map-wrap"><img src="mahajanapada-map.jpg" alt="Practice map"><div id="practicePins" class="pin-layer"></div></div></div>
+  <div class="actions"><button id="hint">💡 Hint</button><button id="next" class="primary" disabled>Next ➜</button></div>
+  <div id="feedback" class="feedback"></div>
+</section>
+</main>
+<footer>Made for students • Historical territories are approximate reconstructions.</footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
